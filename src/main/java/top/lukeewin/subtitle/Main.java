@@ -1,4 +1,4 @@
-package subtitle;
+package top.lukeewin.subtitle;
 
 import com.google.common.io.Resources;
 import javafx.application.Application;
@@ -14,10 +14,16 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(Resources.getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(Resources.getResource("sample.fxml"));
+        Parent root = loader.load();
 
-        final int width = 1024;
-        final int height = 50;
+        Controller controller = loader.getController();
+        controller.setPrimaryStage(primaryStage);
+
+        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+
+        final int width = (int) primaryScreenBounds.getWidth();
+        final int height = 80;
 
         final Scene scene = new Scene(root, width, height);
         scene.setFill(null);
@@ -25,10 +31,20 @@ public class Main extends Application {
         final Stage stage = new Stage();
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setScene(scene);
-        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+
         stage.setX((primaryScreenBounds.getWidth() - width) / 2);
         stage.setY((primaryScreenBounds.getHeight() - height));
         stage.setAlwaysOnTop(true);
+
+        scene.setOnMouseEntered(event -> {
+            scene.getRoot().setStyle("-fx-background-color: rgba(0, 0, 0, 0.7);");
+        });
+
+        scene.setOnMouseExited(event -> {
+            scene.getRoot().setStyle("-fx-background-color: transparent;");
+        });
+
+        stage.setOpacity(1.0);
 
         // 拖动监听器
         DragUtil.addDragListener(stage, root);

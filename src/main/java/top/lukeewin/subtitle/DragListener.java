@@ -1,19 +1,10 @@
-package subtitle;
-
-/**
- * Created by yi-ge
- * 2018-12-21 22:13
- */
+package top.lukeewin.subtitle;
 
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-/**
- * 拖拽监听器
- * @author Light
- */
 public class DragListener implements EventHandler<MouseEvent> {
 
     private double xOffset = 0;

@@ -1,0 +1,9 @@
+app: {name: Desktop_Subtitle, version: 1.0.0}
+streaming_asr: {model_encoder: src/main/resources/models/streaming-paraformer-zh-en/encoder.int8.onnx,
+  model_decoder: src/main/resources/models/streaming-paraformer-zh-en/decoder.int8.onnx,
+  model_tokens: src/main/resources/models/streaming-paraformer-zh-en/tokens.txt}
+asr: {model: src/main/resources/models/sense-voice-zh-en-ja-ko-yue/model.int8.onnx,
+  tokens: src/main/resources/models/sense-voice-zh-en-ja-ko-yue/tokens.txt}
+sampleRate: 16000
+windowSize: 512
+font: {size: 20, color: '#FFB366'}
