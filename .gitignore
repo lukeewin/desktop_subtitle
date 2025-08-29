@@ -1,0 +1,10 @@
+.idea
+target
+src/main/resources/lib
+src/main/resources/libs
+src/main/resources/jni
+src/main/resources/models
+src/main/java/top/lukeewin/subtitle/StreamingDecodeMicParaformer
+src/main/java/top/lukeewin/subtitle/StreamingDecodeMicParaformerWithVadRealtime
+src/main/java/top/lukeewin/subtitle/VadFromMicWithNonStreamingSenseVoice
+desktop-subtitle.iml
